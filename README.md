@@ -1,2 +1,2 @@
 # ToDoApp
- To do app with analyze dashboard
+A Flutter-based task management app with Firebase integration. It allows users to create, categorize, and manage tasks in real-time, with features like task completion tracking, notifications, and data visualization. The app includes a dashboard for insights, Firestore for cloud storage, and local notifications for reminders. Future enhancements may include dark mode, theme customization, and security settings.
