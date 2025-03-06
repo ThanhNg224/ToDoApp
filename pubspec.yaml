@@ -42,8 +42,10 @@ dependencies:
   build_runner: any
   auto_route: ^7.3.0
   auto_route_generator: ^7.3.0
+  cloud_firestore: ^5.6.5
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.9.2"
   flutter_test:
     sdk: flutter
 

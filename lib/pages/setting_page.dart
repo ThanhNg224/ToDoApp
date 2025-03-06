@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 
 void main() {
-  runApp(const NewPage());
+  runApp(const Setting());
 }
 
-class NewPage extends StatelessWidget {
-  const NewPage({super.key});
+class Setting extends StatelessWidget {
+  const Setting({super.key});
 
   @override
   Widget build(BuildContext context) {
