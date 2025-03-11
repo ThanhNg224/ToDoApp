@@ -13,6 +13,12 @@ A **Flutter-based task management app** with **Firebase integration** designed t
 ## Screenshots
 <div align="center">
   <img src="https://github.com/user-attachments/assets/6f5256ee-187a-47b3-812a-d9917bbdf05f" alt="App Screenshot 1" width="300" />
+</div>
+
+<div align="center">
   <img src="https://github.com/user-attachments/assets/02a2ab22-8f29-487e-a5e4-84a0fc9db583" alt="App Screenshot 2" width="300" />
+</div>
+
+<div align="center">
   <img src="https://github.com/user-attachments/assets/8ee57df5-eeb3-4afc-ac40-92c0777a4460" alt="App Screenshot 3" width="300" />
-</div> 
+</div>
