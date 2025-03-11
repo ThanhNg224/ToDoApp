@@ -1,7 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:logger/logger.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../service/notification_service.dart';
+import '../services/notification_service.dart';
 
 class FirebaseApi {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
@@ -32,17 +32,34 @@ class FirebaseApi {
     // Handle messages when the app is in the foreground.
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       logger.i("Received a foreground message:");
-      String title = message.notification?.title ?? 'No Title';
-      String body = message.notification?.body ?? 'No Body';
-      logger.i("Title: $title");
-      logger.i("Body: $body");
-      logger.i("Data: ${message.data}");
+      logger.i("Title: ${message.notification?.title ?? 'No Title'}");
+      logger.i("Body: ${message.notification?.body ?? 'No Body'}");
       logger.i("Data: ${message.data}");
 
-      // Show a local notification.
-      NotificationService.showNotification(title: title, body: body);
+      if (message.notification != null) {
+        NotificationService.showNotification(
+          title: message.notification!.title ?? 'No Title',
+          body: message.notification!.body ?? 'No Body',
+        );
+      }
     });
+
+    // Handle messages when the app is in the background but opened by clicking the notification
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      logger.i("User opened app from notification: ${message.notification?.title}");
+    });
+
+    // Handle background notifications when the app is killed
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   }
+}
+
+// This function handles messages when the app is killed (terminated)
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  NotificationService.showNotification(
+    title: message.notification?.title ?? 'No Title',
+    body: message.notification?.body ?? 'No Body',
+  );
 }
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
