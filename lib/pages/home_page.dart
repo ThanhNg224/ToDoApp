@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                         priority,
                       );
                     }
-                    if (mounted) {
+                    if (dialogContext.mounted) {
                       Navigator.of(dialogContext).pop();
                     }
                   },

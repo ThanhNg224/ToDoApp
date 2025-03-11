@@ -13,15 +13,15 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   // A helper method to access _MyAppState from other pages
-  static _MyAppState? of(BuildContext context) {
-    return context.findAncestorStateOfType<_MyAppState>();
+  static MyAppState? of(BuildContext context) {
+    return context.findAncestorStateOfType<MyAppState>();
   }
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   bool isDark = false; // Global dark mode flag
 
   // This method toggles dark mode

@@ -20,24 +20,24 @@ dependencies {
 
 android {
     namespace = "com.example.app"
-    compileSdk = 34
+    compileSdk = 35
     ndkVersion = "28.0.12916984"
 
     compileOptions {
         // 3. Enable core library desugaring
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
         applicationId = "com.example.app"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 35
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
